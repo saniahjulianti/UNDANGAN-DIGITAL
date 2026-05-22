@@ -1229,30 +1229,65 @@
             </div>
 
         </div>
-        <!-- CREDIT -->
+          <!-- CREDIT -->
 <section style="padding:35px 20px; text-align:center;">
 
     <div style="
-        display:inline-block;
-        padding:14px 30px;
+        display:inline-flex;
+        align-items:center;
+        gap:12px;
+        padding:16px 34px;
         border:1px solid rgba(197,160,89,0.3);
         border-radius:999px;
         background:rgba(255,255,255,0.05);
-        backdrop-filter:blur(10px);
+        backdrop-filter:blur(12px);
         color:white;
         font-size:12px;
         letter-spacing:4px;
-        text-transform:uppercase;
+        box-shadow:0 10px 25px rgba(0,0,0,0.25);
     ">
 
-        Design By 
+        <span style="opacity:.7;">
+            Design By
+        </span>
+
         <span style="
             color:#c5a059;
             font-weight:bold;
+            font-size:13px;
         ">
             FRN
         </span>
 
+        <!-- GARIS -->
+        <div style="
+            width:1px;
+            height:18px;
+            background:rgba(255,255,255,0.2);
+        "></div>
+
+        <!-- INSTAGRAM -->
+        <a href="https://instagram.com/username_kamu"
+           target="_blank"
+           style="
+                color:white;
+                text-decoration:none;
+                display:flex;
+                align-items:center;
+                gap:8px;
+                transition:.3s;
+           "
+           onmouseover="this.style.color='#e1306c'"
+           onmouseout="this.style.color='white'">
+
+            <span style="font-size:16px;">🅾 𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦</span>
+
+            <span style="
+                letter-spacing:2px;
+                font-size:11px;
+            ">
+                @frhan29_
+            </span>
     </div>
 
 </section>
