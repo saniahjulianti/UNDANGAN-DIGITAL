@@ -1465,12 +1465,7 @@ window.location.href = url;
             container.style.display = this.value === 'Tidak Hadir' ? 'none' : 'block';
         });
 
-        window.addEventListener("scroll", () => {
-    const scrolled = window.pageYOffset;
 
-    document.querySelectorAll(".bg-section").forEach(section => {
-        section.style.backgroundPositionY = `${scrolled * 0.5}px`;
-    });
 });
 
         function toggleMusic() {
