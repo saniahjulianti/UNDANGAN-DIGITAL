@@ -422,11 +422,24 @@
 
         #particle-canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 10000; }
 
-        #main-content {
-            background-image: url(saniah.jpeg);
-            background-size: cover; background-position: center; background-attachment: fixed;
-            opacity: 0; display: none; z-index: 1;
-        }
+       #main-content {
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.75),
+            rgba(0,0,0,0.75)
+        ),
+        url('sanie.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    opacity: 0;
+    display: none;
+    z-index: 1;
+}
         #main-content.visible { opacity: 1; display: block; }
 
         .bg-section { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 80px 20px; z-index: 5; }
