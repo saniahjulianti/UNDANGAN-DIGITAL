@@ -23,7 +23,7 @@
             rgba(0,0,0,0.45),
             rgba(0,0,0,0.7)
         ),
-        url(saniah.jpeg);
+        url(sanie.jpeg);
 
     background-size: cover;
     background-position: center;
@@ -422,11 +422,24 @@
 
         #particle-canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 10000; }
 
-        #main-content {
-            background-image: url(saniah.jpeg);
-            background-size: cover; background-position: center; background-attachment: fixed;
-            opacity: 0; display: none; z-index: 1;
-        }
+       #main-content {
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.75),
+            rgba(0,0,0,0.75)
+        ),
+        url('sanie.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    opacity: 0;
+    display: none;
+    z-index: 1;
+}
         #main-content.visible { opacity: 1; display: block; }
 
         .bg-section { position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 80px 20px; z-index: 5; }
@@ -750,7 +763,7 @@
     </audio>
 
     <div id="lightbox" onclick="closeLightbox()" class="clickable-effect">
-        <img id="saniah.jpeg" src="" alt="Zoom">
+        <img id="lightbox-img" src="sanie.jpeg" alt="Zoom">
         <div class="btn-close-zoom shadow-lg">KEMBALI KE GALERI</div>
     </div>
 
@@ -1229,7 +1242,7 @@
             </div>
 
         </div>
-          <!-- CREDIT -->
+     <!-- CREDIT -->
 <section style="padding:35px 20px; text-align:center;">
 
     <div style="
@@ -1288,6 +1301,9 @@
             ">
                 @frhan29_
             </span>
+
+        </a>
+
     </div>
 
 </section>
@@ -1444,7 +1460,7 @@ window.location.href = url;
 
         function handleImgClick(el) {
             const lb = document.getElementById('lightbox');
-            const lbImg = document.getElementById('saniah.jpeg');
+            const lbImg = document.getElementById('sanie.jpeg');
             const lbBtn = document.querySelector('.btn-close-zoom');
             lbImg.src = el.src;
             lb.style.display = 'flex';
@@ -1455,7 +1471,7 @@ window.location.href = url;
 
         function closeLightbox() {
             const lb = document.getElementById('lightbox');
-            const lbImg = document.getElementById('saniah.jpeg');
+            const lbImg = document.getElementById('sani.jpeg');
             gsap.to(lbImg, { scale: 0.5, opacity: 0, duration: 0.5, ease: "power2.in", onComplete: () => lb.style.display = 'none' });
             gsap.to(lb, { backgroundColor: "rgba(0,0,0,0)", backdropFilter: "blur(0px)", duration: 0.5 });
         }
@@ -1499,6 +1515,7 @@ window.location.href = url;
             const container = document.getElementById('jumlahContainer');
             container.style.display = this.value === 'Tidak Hadir' ? 'none' : 'block';
         });
+
 
         function toggleMusic() {
             const audio = document.getElementById('bgMusic');
