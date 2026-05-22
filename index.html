@@ -23,7 +23,7 @@
             rgba(0,0,0,0.45),
             rgba(0,0,0,0.7)
         ),
-        url(saniah.jpeg);
+        url(sanie.jpeg);
 
     background-size: cover;
     background-position: center;
@@ -750,7 +750,7 @@
     </audio>
 
     <div id="lightbox" onclick="closeLightbox()" class="clickable-effect">
-        <img id="saniah.jpeg" src="" alt="Zoom">
+        <img id="lightbox-img" src="sanie.jpeg" alt="Zoom">
         <div class="btn-close-zoom shadow-lg">KEMBALI KE GALERI</div>
     </div>
 
@@ -1229,7 +1229,7 @@
             </div>
 
         </div>
-          <!-- CREDIT -->
+     <!-- CREDIT -->
 <section style="padding:35px 20px; text-align:center;">
 
     <div style="
@@ -1288,6 +1288,9 @@
             ">
                 @frhan29_
             </span>
+
+        </a>
+
     </div>
 
 </section>
@@ -1444,7 +1447,7 @@ window.location.href = url;
 
         function handleImgClick(el) {
             const lb = document.getElementById('lightbox');
-            const lbImg = document.getElementById('saniah.jpeg');
+            const lbImg = document.getElementById('sanie.jpeg');
             const lbBtn = document.querySelector('.btn-close-zoom');
             lbImg.src = el.src;
             lb.style.display = 'flex';
@@ -1455,7 +1458,7 @@ window.location.href = url;
 
         function closeLightbox() {
             const lb = document.getElementById('lightbox');
-            const lbImg = document.getElementById('saniah.jpeg');
+            const lbImg = document.getElementById('sani.jpeg');
             gsap.to(lbImg, { scale: 0.5, opacity: 0, duration: 0.5, ease: "power2.in", onComplete: () => lb.style.display = 'none' });
             gsap.to(lb, { backgroundColor: "rgba(0,0,0,0)", backdropFilter: "blur(0px)", duration: 0.5 });
         }
@@ -1499,6 +1502,7 @@ window.location.href = url;
             const container = document.getElementById('jumlahContainer');
             container.style.display = this.value === 'Tidak Hadir' ? 'none' : 'block';
         });
+
 
         function toggleMusic() {
             const audio = document.getElementById('bgMusic');
