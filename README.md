@@ -1500,9 +1500,6 @@ window.location.href = url;
             container.style.display = this.value === 'Tidak Hadir' ? 'none' : 'block';
         });
 
-
-});
-
         function toggleMusic() {
             const audio = document.getElementById('bgMusic');
             const btn = document.getElementById('music-btn');
