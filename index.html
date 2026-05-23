@@ -577,8 +577,15 @@ html, body{
             50% { opacity: 1; }
             100% { opacity: 0; transform: rotate(45deg) translate(5px, 5px); }
         }
-
-        .float-container { position: fixed; bottom: 25px; right: 25px; z-index: 9999; display: none; flex-direction: column; gap: 15px; }
+        .float-container{
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+            gap: 12px; /* penting */
+        }
         .float-btn { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; cursor: pointer; background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.4); font-size: 20px; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .float-btn:hover { transform: translateY(-5px); }
         .float-btn:active { transform: scale(0.8) rotate(-10deg); }
@@ -1467,8 +1474,19 @@ html, body{
     <div class="btn-close-zoom shadow-lg">KEMBALI KE GALERI</div>
     </div>
     <div id="float-controls" class="float-container">
-        <div id="theme-btn" class="float-btn shadow-xl" onclick="toggleTheme()">🌙</div>
-        <div id="music-btn" class="float-btn shadow-xl" onclick="toggleMusic()">🎵</div>
+
+    <div class="float-btn" onclick="toggleTheme()" id="theme-btn">
+        🌙
+    </div>
+
+    <div class="float-btn" onclick="toggleMusic()" id="music-btn">
+        🎵
+    </div>
+
+    <div class="float-btn" onclick="backToCover()" id="back-btn">
+        🔙
+    </div>
+
     </div>
     <!-- SCROLL NAV BUTTON -->
     <div id="scrollNav" class="scroll-nav">
@@ -2187,7 +2205,8 @@ window.location.href = url;
         function openInvitation() {
             const env = document.getElementById('envelope');
             const main = document.getElementById('main-content');
-            
+            document.getElementById('back-btn').style.display = 'flex';
+            document.getElementById('back-btn').style.display = 'none';
             gsap.to("#env-top, #env-mid, #env-bottom", { opacity: 0, scale: 1.5, duration: 1, stagger: 0.1, ease: "power2.inOut" });
             gsap.to(env, { 
                 scale: 2, 
