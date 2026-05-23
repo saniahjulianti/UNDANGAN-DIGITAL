@@ -19,10 +19,10 @@
     z-index: 99999;
 
     background:
-        linear-gradient(
-            rgba(0,0,0,0.45),
-            rgba(0,0,0,0.7)
-        ),
+       linear-gradient(
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.25)
+)
         url(sanie.jpeg);
 
     background-size: cover;
@@ -833,6 +833,433 @@ html, body{
     align-items:center;
     justify-content:center;
 }
+#countdown .gold-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    min-height:120px;
+    padding:20px 10px;
+
+    text-align:center;
+}
+
+#countdown h3{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    line-height:1;
+    margin:0;
+}
+
+#countdown p{
+    margin-top:10px;
+}
+.credit-box{
+
+    width:100%;
+    max-width:520px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    text-align:center;
+
+    padding:18px 24px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(197,160,89,0.3);
+
+    backdrop-filter:blur(12px);
+
+    margin:auto;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.25);
+}
+
+.credit-text{
+    opacity:.7;
+    letter-spacing:3px;
+    font-size:12px;
+}
+
+.credit-name{
+    color:#c5a059;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+.credit-line{
+    width:1px;
+    height:18px;
+    background:rgba(255,255,255,0.25);
+}
+
+.credit-ig{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    text-decoration:none;
+    color:white;
+
+    transition:.3s;
+}
+
+.credit-ig:hover{
+    color:#e1306c;
+}
+
+.ig-user{
+    letter-spacing:2px;
+    font-size:11px;
+}
+
+@media(max-width:768px){
+
+    .credit-box{
+
+        border-radius:25px;
+
+        padding:18px;
+
+        gap:8px;
+    }
+
+}
+/* ===== CREDIT PREMIUM ===== */
+
+.credit-section{
+    width:100%;
+    padding:60px 20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.credit-premium{
+
+    position:relative;
+
+    width:100%;
+    max-width:650px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:22px;
+
+    padding:24px 30px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.03)
+        );
+
+    border:1px solid rgba(197,160,89,0.35);
+
+    backdrop-filter:blur(18px);
+
+    overflow:hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35),
+        0 0 25px rgba(197,160,89,0.08);
+}
+
+/* glow background */
+.credit-glow{
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(197,160,89,0.22),
+            transparent 70%
+        );
+
+    top:-100px;
+    right:-80px;
+
+    pointer-events:none;
+}
+
+/* kiri */
+.credit-left{
+    text-align:center;
+}
+
+.credit-label{
+
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    opacity:.7;
+
+    margin-bottom:5px;
+}
+
+.credit-brand{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    letter-spacing:10px;
+
+    color:#d4af63;
+
+    font-family:'Playfair Display', serif;
+
+    text-shadow:
+        0 0 15px rgba(212,175,99,0.35);
+}
+
+/* garis */
+.credit-divider{
+
+    width:1px;
+    height:55px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(255,255,255,0.3),
+            transparent
+        );
+}
+
+/* instagram box */
+.credit-instagram{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:14px 22px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.03)
+        );
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    transition:.35s ease;
+}
+
+.credit-instagram:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    border-color:#e1306c;
+
+    box-shadow:
+        0 15px 35px rgba(225,48,108,0.25);
+}
+
+/* icon */
+.ig-icon{
+
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    font-size:24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #fd1d1d,
+            #fcb045
+        );
+
+    box-shadow:
+        0 8px 20px rgba(225,48,108,0.35);
+}
+
+/* text */
+.ig-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.ig-title{
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:rgba(255,255,255,0.6);
+
+    margin-bottom:3px;
+}
+
+.ig-username{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:white;
+
+    letter-spacing:1px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .credit-premium{
+
+        flex-direction:column;
+
+        gap:18px;
+
+        padding:25px 20px;
+
+        border-radius:25px;
+    }
+
+    .credit-divider{
+
+        width:70%;
+        height:1px;
+    }
+
+    .credit-brand{
+        font-size:30px;
+    }
+
+    .credit-instagram{
+        width:100%;
+        justify-content:center;
+    }
+
+}
+/* BOX DESIGNER */
+
+.credit-designer{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:18px 26px;
+
+    border-radius:22px;
+
+    min-width:220px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.03)
+        );
+
+    border:1px solid rgba(197,160,89,0.25);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.25),
+        inset 0 1px 1px rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(14px);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* glow */
+.credit-designer::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:160px;
+    height:160px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(197,160,89,0.18),
+            transparent 70%
+        );
+
+    top:-70px;
+    right:-60px;
+}
+
+/* tulisan bawah */
+.credit-role{
+
+    margin-top:6px;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:rgba(255,255,255,0.6);
+}
+
+/* hover */
+.credit-designer:hover{
+
+    transform:
+        translateY(-5px);
+
+    transition:.35s ease;
+
+    border-color:rgba(197,160,89,0.5);
+
+    box-shadow:
+        0 20px 35px rgba(0,0,0,0.35),
+        0 0 20px rgba(197,160,89,0.15);
+}
 
 }
     </style>
@@ -1346,7 +1773,7 @@ html, body{
             </div>
 
         </div>
-     <!-- CREDIT -->
+        <!-- CREDIT -->
 <section style="padding:35px 20px; text-align:center;">
 
     <div style="
@@ -1412,8 +1839,8 @@ html, body{
 
 </section>
 
-    </div>
-</section>
+
+
     </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -1541,17 +1968,17 @@ window.location.href = url;
         }
 
         let sX, sY, nX, nY, desX = 0, desY = 0, tX = 0, tY = 10;
-        document.onpointerdown = function (e) {
+        odrag.onpointerdown = function (e) {
             clearInterval(odrag.timer);
             sX = e.clientX; sY = e.clientY;
-            this.onpointermove = function (e) {
+            odrag.onpointermove = function (e) {
                 nX = e.clientX; nY = e.clientY;
                 desX = nX - sX; desY = nY - sY;
                 tX += desX * 0.1; tY += desY * 0.1;
                 odrag.style.transform = `rotateX(${-tY}deg) rotateY(${tX}deg)`;
                 sX = nX; sY = nY;
             };
-            this.onpointerup = function () {
+            odrag.onpointerup = function () {
                 this.onpointermove = this.onpointerup = null;
                 odrag.timer = setInterval(function () {
                     desX *= 0.95; desY *= 0.95;
@@ -1595,7 +2022,7 @@ window.location.href = url;
 
         function closeLightbox() {
             const lb = document.getElementById('lightbox');
-            const lbImg = document.getElementById('sani.jpeg');
+            const lbImg = document.getElementById('light.jpeg');
             gsap.to(lbImg, { scale: 0.5, opacity: 0, duration: 0.5, ease: "power2.in", onComplete: () => lb.style.display = 'none' });
             gsap.to(lb, { backgroundColor: "rgba(0,0,0,0)", backdropFilter: "blur(0px)", duration: 0.5 });
         }
