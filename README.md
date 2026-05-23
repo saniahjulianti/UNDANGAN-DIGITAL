@@ -1382,51 +1382,99 @@ html, body{
         height: 1px;
     }
 }
-.scroll-nav.show{
-    opacity: 1;
-    transform: translateY(0);
-}
+/* ===== MODERN SCROLL INDICATOR ===== */
+
 .scroll-nav{
     position: fixed;
-    right: 20px;
-    bottom: 200px; /* ⬅ dinaikin biar tidak nabrak tombol lain */
+
+    right: 18px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 26px;
+    height: 220px;
 
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9990;
 
     opacity: 0;
-    transform: translateY(20px);
-    transition: 0.4s ease;
+    transition: .4s ease;
 }
 
+.scroll-nav.show{
+    opacity: 1;
+}
+
+.scroll-track{
+    position: relative;
+
+    width: 4px;
+    height: 100%;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.12);
+
+    overflow: hidden;
+}
+
+.scroll-line{
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(197,160,89,0.15),
+        rgba(197,160,89,0.35),
+        rgba(197,160,89,0.15)
+    );
+}
+
+.scroll-thumb{
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 16px;
+    height: 45px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        180deg,
+        #f3d98b,
+        #c5a059
+    );
+
+    box-shadow:
+        0 0 20px rgba(197,160,89,0.45);
+
+    transition: .15s ease;
+}
+
+/* MOBILE */
 @media(max-width:768px){
+
     .scroll-nav{
-        right: 14px;
-        bottom: 240px; /* lebih tinggi di HP biar gak nabrak */
+        right: 10px;
+        height: 170px;
     }
+
+    .scroll-thumb{
+        width: 14px;
+        height: 36px;
+    }
+
 }
 
-.scroll-btn{
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(197,160,89,0.9);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    transition: 0.3s ease;
-    backdrop-filter: blur(10px);
-}
 
-.scroll-btn:hover{
-    transform: scale(1.1);
-}
 .wa-label{
     font-family: 'Playfair Display', serif;
     font-size: 12px;
@@ -1456,6 +1504,13 @@ html, body{
     );
 
     opacity: 0.6;
+}
+.scroll-nav{
+    pointer-events: none;
+}
+
+.scroll-thumb{
+    pointer-events: auto;
 }
     </style>
 </head>
@@ -1490,9 +1545,16 @@ html, body{
     </div>
     <!-- SCROLL NAV BUTTON -->
     <div id="scrollNav" class="scroll-nav">
-    <div class="scroll-btn" onclick="scrollUp()">⬆</div>
-    <div class="scroll-btn" onclick="scrollDown()">⬇</div>
-</div>
+
+    <div class="scroll-track">
+
+        <div class="scroll-line"></div>
+
+        <div class="scroll-thumb" id="scrollThumb"></div>
+
+    </div>
+
+    </div>
 
    
 <div id="envelope">
@@ -2206,7 +2268,6 @@ window.location.href = url;
             const env = document.getElementById('envelope');
             const main = document.getElementById('main-content');
             document.getElementById('back-btn').style.display = 'flex';
-            document.getElementById('back-btn').style.display = 'none';
             gsap.to("#env-top, #env-mid, #env-bottom", { opacity: 0, scale: 1.5, duration: 1, stagger: 0.1, ease: "power2.inOut" });
             gsap.to(env, { 
                 scale: 2, 
@@ -2345,6 +2406,47 @@ function updateCountdown() {
     document.getElementById("seconds").innerHTML =
         String(seconds).padStart(2, '0');
 }
+function backToCover() {
+
+const env = document.getElementById('envelope');
+const main = document.getElementById('main-content');
+
+// tampilkan cover lagi
+env.style.display = 'flex';
+
+// reset animasi cover
+gsap.fromTo(
+    env,
+    {
+        opacity: 0,
+        scale: 1.2
+    },
+    {
+        opacity: 1,
+        scale: 1,
+        duration: 1
+    }
+);
+
+// sembunyikan isi undangan
+main.classList.remove('visible');
+
+// body kembali hidden
+document.body.classList.add('overflow-hidden');
+
+// sembunyikan tombol float
+document.getElementById('float-controls').style.display = 'none';
+
+// pause musik
+const audio = document.getElementById('bgMusic');
+audio.pause();
+
+// scroll ke atas
+window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+});
+}
 document.addEventListener("DOMContentLoaded", () => {
     const scrollNav = document.querySelector(".scroll-nav");
 
@@ -2356,9 +2458,137 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             scrollNav.classList.remove("show");
         }
+        /* ===== DRAG SCROLL ===== */
+
+const scrollThumb = document.getElementById("scrollThumb");
+const scrollTrack = document.querySelector(".scroll-track");
+
+let isDragging = false;
+
+function updateThumb() {
+
+    const scrollTop = window.scrollY;
+
+    const docHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const percent = scrollTop / docHeight;
+
+    const trackHeight = scrollTrack.offsetHeight;
+    const thumbHeight = scrollThumb.offsetHeight;
+
+    const move =
+        percent * (trackHeight - thumbHeight);
+
+    scrollThumb.style.top = move + "px";
+}
+
+window.addEventListener("scroll", updateThumb);
+
+updateThumb();
+
+/* DRAG DESKTOP + MOBILE */
+
+scrollThumb.addEventListener("mousedown", () => {
+    isDragging = true;
+});
+
+document.addEventListener("mouseup", () => {
+    isDragging = false;
+});
+
+document.addEventListener("mousemove", (e) => {
+
+    if(!isDragging) return;
+
+    const rect = scrollTrack.getBoundingClientRect();
+
+    let offset =
+        e.clientY - rect.top;
+
+    const thumbHeight =
+        scrollThumb.offsetHeight;
+
+    offset =
+        Math.max(
+            0,
+            Math.min(
+                offset,
+                rect.height - thumbHeight
+            )
+        );
+
+    const percent =
+        offset /
+        (rect.height - thumbHeight);
+
+    const scrollTo =
+        percent *
+        (
+            document.documentElement.scrollHeight -
+            window.innerHeight
+        );
+
+    window.scrollTo({
+        top: scrollTo
+    });
+
+});
+
+/* MOBILE TOUCH */
+
+scrollThumb.addEventListener("touchstart", () => {
+    isDragging = true;
+});
+
+document.addEventListener("touchend", () => {
+    isDragging = false;
+});
+
+document.addEventListener("touchmove", (e) => {
+
+    if(!isDragging) return;
+
+    const rect = scrollTrack.getBoundingClientRect();
+
+    let offset =
+        e.touches[0].clientY - rect.top;
+
+    const thumbHeight =
+        scrollThumb.offsetHeight;
+
+    offset =
+        Math.max(
+            0,
+            Math.min(
+                offset,
+                rect.height - thumbHeight
+            )
+        );
+
+    const percent =
+        offset /
+        (rect.height - thumbHeight);
+
+    const scrollTo =
+        percent *
+        (
+            document.documentElement.scrollHeight -
+            window.innerHeight
+        );
+
+    window.scrollTo({
+        top: scrollTo
+    });
+
+}, { passive:false });
+
+        
     });
 });
 updateCountdown();
+
 
 setInterval(updateCountdown, 1000);
     </script>
