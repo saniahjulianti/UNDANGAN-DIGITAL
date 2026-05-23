@@ -952,12 +952,25 @@ html, body{
 /* KECILIN CREDIT */
 
 .credit-premium{
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
 
-    max-width:320px;
-    padding:14px 12px;
-    gap:12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
 
-    border-radius:22px;
+    padding: 18px 20px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(197,160,89,0.3);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
 .credit-designer,
@@ -1060,16 +1073,13 @@ html, body{
 
 /* garis */
 .credit-divider{
-
-    width:1px;
-    height:55px;
-
-    background:
-        linear-gradient(
-            transparent,
-            rgba(255,255,255,0.3),
-            transparent
-        );
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
 }
 
 /* instagram box */
@@ -1360,6 +1370,17 @@ html, body{
         font-size:12px;
     }
 
+}
+@media(max-width:768px){
+    .credit-premium{
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .credit-divider{
+        width: 80%;
+        height: 1px;
+    }
 }
     </style>
 </head>
