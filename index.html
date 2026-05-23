@@ -1776,24 +1776,24 @@ html, body{
                                     <p class="text-amber-200 mb-6 italic">Jl. He Sukma Kp. Bitung Ratna Rt01/02 Ds. Bitung Sari Kec. Ciawi Kab. Bogor 16720
                                     </p>
                                     
-                    <div class="mt-6 rounded-2xl overflow-hidden border-2 border-amber-500 shadow-2xl">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.6974164621693!2d106.84445939999999!3d-6.684354400000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c91434d38b35%3A0xc2095aecc23b1eba!2sR.A%20ALIF!5e0!3m2!1sid!2sid!4v1779476946863!5m2!1sid!2sid"
-                            width="100%"
-                            height="320"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy">
-                        </iframe>
-                    </div>
-                    
-                    <div class="mt-5">
-                        <a href="https://maps.app.goo.gl/QGJ4iciZ1UucqKKc8" 
-                           target="_blank" 
-                           class="btn-maps btn-pulse clickable-effect">
-                            📍 BUKA GOOGLE MAPS
-                        </a>
-                    </div>
+                                    <div class="mt-6 rounded-2xl overflow-hidden border-2 border-amber-500 shadow-2xl">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.6974164621693!2d106.84445940000002!3d-6.684354399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c91434d38b35%3A0xc2095aecc23b1eba!2sR.A%20ALIF!5e0!3m2!1sen!2sid!4v1779547776668!5m2!1sen!2sid"
+        width="100%"
+        height="320"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+</div>
+
+<div class="mt-5">
+    <a href="https://maps.app.goo.gl/QGJ4iciZ1UucqKKc8"
+       target="_blank"
+       class="btn-maps btn-pulse clickable-effect">
+        📍 BUKA GOOGLE MAPS
+    </a>
+</div>
                 </div>
             </div>
         </section>
