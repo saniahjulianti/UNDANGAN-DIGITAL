@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>The Wedding of Davi & Saniah</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,10 +19,10 @@
     z-index: 99999;
 
     background:
-        linear-gradient(
-            rgba(0,0,0,0.45),
-            rgba(0,0,0,0.7)
-        ),
+       linear-gradient(
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.25)
+)
         url(sanie.jpeg);
 
     background-size: cover;
@@ -419,16 +419,23 @@
             10% { opacity: 1; }
             100% { transform: translateY(110vh) rotate(360deg) scale(1.2); opacity: 0; }
         }
+html, body{
+    touch-action: pan-y;
+    overflow-x: hidden;
+}
+
+#lightbox,
+#lightbox img{
+    touch-action: none;
+}
 
         #particle-canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 10000; }
 
 #main-content {
-    position: relative;
-
     background:
         linear-gradient(
-            rgba(0,0,0,0.78),
-            rgba(0,0,0,0.82)
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.45)
         ),
         url('saniah.jpeg');
 
@@ -789,8 +796,618 @@
         left:140%;
     }
 }
+html, body{
+    overflow-x: hidden;
+    width: 100%;
+}
+
+#main-content,
+.bg-section,
+.content{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+@media(max-width:768px){
+
+    .cover-title{
+        font-size:52px !important;
+    }
+
+    .premium-heading{
+        letter-spacing:4px !important;
+    }
+
+    .invite-box{
+        max-width:90%;
+        margin:auto;
+    }
+
+}
+#countdown .gold-card{
+    min-height:120px;
+}
+
+#countdown h3{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+#countdown .gold-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    min-height:120px;
+    padding:20px 10px;
+
+    text-align:center;
+}
+
+#countdown h3{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    line-height:1;
+    margin:0;
+}
+
+#countdown p{
+    margin-top:10px;
+}
+.credit-box{
+
+    width:100%;
+    max-width:520px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    text-align:center;
+
+    padding:18px 24px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(197,160,89,0.3);
+
+    backdrop-filter:blur(12px);
+
+    margin:auto;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.25);
+}
+
+.credit-text{
+    opacity:.7;
+    letter-spacing:3px;
+    font-size:12px;
+}
+
+.credit-name{
+    color:#c5a059;
+    font-weight:bold;
+    letter-spacing:3px;
+}
+
+.credit-line{
+    width:1px;
+    height:18px;
+    background:rgba(255,255,255,0.25);
+}
+
+.credit-ig{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    text-decoration:none;
+    color:white;
+
+    transition:.3s;
+}
+
+.credit-ig:hover{
+    color:#e1306c;
+}
+
+.ig-user{
+    letter-spacing:2px;
+    font-size:11px;
+}
+
+@media(max-width:768px){
+
+    .credit-box{
+
+        border-radius:25px;
+
+        padding:18px;
+
+        gap:8px;
+    }
+
+}
+/* ===== CREDIT PREMIUM ===== */
+
+.credit-section{
+    width:100%;
+    padding:60px 20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* KECILIN CREDIT */
+
+.credit-premium{
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    padding: 18px 20px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(197,160,89,0.3);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.credit-designer,
+.credit-instagram{
+
+    max-width:220px;
+    padding:12px 14px;
+}
+
+.credit-brand{
+    font-size:24px;
+    letter-spacing:3px;
+}
+
+.credit-label{
+    font-size:9px;
+    letter-spacing:3px;
+}
+
+.credit-role{
+    font-size:8px;
+    letter-spacing:2px;
+}
+
+.ig-icon{
+    width:38px;
+    height:38px;
+    font-size:18px;
+    border-radius:12px;
+}
+
+.ig-title{
+    font-size:8px;
+    letter-spacing:2px;
+}
+
+.ig-username{
+    font-size:13px;
+}
+
+.credit-divider{
+    height:35px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .credit-premium{
+        max-width:280px;
+        padding:12px;
+    }
+
+}
+    background:
+        radial-gradient(
+            circle,
+            rgba(197,160,89,0.22),
+            transparent 70%
+        );
+
+    top:-100px;
+    right:-80px;
+
+    pointer-events:none;
+}
+
+/* kiri */
+.credit-left{
+    text-align:center;
+}
+
+.credit-label{
+
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    opacity:.7;
+
+    margin-bottom:5px;
+}
+
+.credit-brand{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    color:#d4af63;
+
+    font-family:'Playfair Display', serif;
+
+    text-shadow:
+        0 0 15px rgba(212,175,99,0.35);
+}
+
+/* garis */
+.credit-divider{
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+}
+
+/* instagram box */
+.credit-instagram{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:14px 22px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.03)
+        );
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    transition:.35s ease;
+}
+
+.credit-instagram:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    border-color:#e1306c;
+
+    box-shadow:
+        0 15px 35px rgba(225,48,108,0.25);
+}
+
+/* icon */
+.ig-icon{
+
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    font-size:24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #833ab4,
+            #fd1d1d,
+            #fcb045
+        );
+
+    box-shadow:
+        0 8px 20px rgba(225,48,108,0.35);
+}
+
+/* text */
+.ig-text{
+    display:flex;
+    flex-direction:column;
+}
+.text-gold-soft{
+    color: rgba(197,160,89,0.8);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.ig-title{
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:rgba(255,255,255,0.6);
+
+    margin-bottom:3px;
+}
+
+.ig-username{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:white;
+
+    letter-spacing:1px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .credit-premium{
+
+        flex-direction:column;
+
+        gap:18px;
+
+        padding:25px 20px;
+
+        border-radius:25px;
+    }
+
+    .credit-divider{
+
+        width:70%;
+        height:1px;
+    }
+
+    .credit-brand{
+        font-size:30px;
+    }
+
+    .credit-instagram{
+        width:100%;
+        justify-content:center;
+    }
+
+}
+/* BOX DESIGNER */
+
+.credit-designer{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:18px 26px;
+
+    border-radius:22px;
+
+    min-width:220px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.03)
+        );
+
+    border:1px solid rgba(197,160,89,0.25);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.25),
+        inset 0 1px 1px rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(14px);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* glow */
+.credit-designer::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:160px;
+    height:160px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(197,160,89,0.18),
+            transparent 70%
+        );
+
+    top:-70px;
+    right:-60px;
+}
 
 
+/* hover */
+.credit-designer:hover{
+
+    transform:
+        translateY(-5px);
+
+    transition:.35s ease;
+
+    border-color:rgba(197,160,89,0.5);
+
+    box-shadow:
+        0 20px 35px rgba(0,0,0,0.35),
+        0 0 20px rgba(197,160,89,0.15);
+}
+/* CREDIT BOX */
+.credit-premium{
+
+    max-width:480px;
+
+    gap:14px;
+
+    padding:16px 18px;
+
+    border-radius:22px;
+}
+
+/* DESIGNER BOX */
+.credit-designer{
+
+    padding:12px 18px;
+
+    min-width:100px;
+
+    border-radius:16px;
+}
+
+/* FRN */
+.credit-brand{
+
+    font-size:24px;
+
+    letter-spacing:5px;
+}
+
+/* DESIGN BY */
+.credit-label{
+
+    font-size:9px;
+
+    letter-spacing:3px;
+}
+
+/* INSTAGRAM BOX */
+.credit-instagram{
+
+    gap:10px;
+
+    padding:10px 14px;
+
+    border-radius:14px;
+}
+
+/* ICON IG */
+.ig-icon{
+
+    width:38px;
+    height:38px;
+
+    font-size:18px;
+}
+
+/* TEXT IG */
+.ig-title{
+
+    font-size:9px;
+
+    letter-spacing:2px;
+}
+
+.ig-username{
+
+    font-size:14px;
+}
+
+
+@media(max-width:768px){
+    .credit-premium{
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .credit-divider{
+        width: 80%;
+        height: 1px;
+    }
+}
+.scroll-nav.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+.scroll-nav{
+    position: fixed;
+    right: 20px;
+    bottom: 200px; /* ⬅ dinaikin biar tidak nabrak tombol lain */
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 99999;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.4s ease;
+}
+
+@media(max-width:768px){
+    .scroll-nav{
+        right: 14px;
+        bottom: 240px; /* lebih tinggi di HP biar gak nabrak */
+    }
+}
+
+.scroll-btn{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(197,160,89,0.9);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.scroll-btn:hover{
+    transform: scale(1.1);
 }
     </style>
 </head>
@@ -805,14 +1422,18 @@
     </audio>
 
     <div id="lightbox" onclick="closeLightbox()" class="clickable-effect">
-        <img id="lightbox-img" src="sanie.jpeg" alt="Zoom">
-        <div class="btn-close-zoom shadow-lg">KEMBALI KE GALERI</div>
+    <img id="lightbox-img" src="sanie.jpeg" alt="Zoom">
+    <div class="btn-close-zoom shadow-lg">KEMBALI KE GALERI</div>
     </div>
-
     <div id="float-controls" class="float-container">
         <div id="theme-btn" class="float-btn shadow-xl" onclick="toggleTheme()">🌙</div>
         <div id="music-btn" class="float-btn shadow-xl" onclick="toggleMusic()">🎵</div>
     </div>
+    <!-- SCROLL NAV BUTTON -->
+    <div id="scrollNav" class="scroll-nav">
+    <div class="scroll-btn" onclick="scrollUp()">⬆</div>
+    <div class="scroll-btn" onclick="scrollDown()">⬇</div>
+</div>
 
    
 <div id="envelope">
@@ -984,43 +1605,61 @@
                     <h3 class="font-elegant text-3xl text-white mb-2">Akad & Resepsi</h3>
                     <p class="text-amber-200 mb-6 italic">Minggu, 31 Mei 2026 | 09.00 - Selesai</p>
                     <p id="hero-date" class="font-elegant text-xl tracking-[0.4em] italic reveal-text">
-                        Sabtu, 30 Mei 2026
+                        Sabtu, 31 Mei 2026
                     </p>
                     
                     <div id="countdown" class="mt-8 reveal-text">
                         <div class="grid grid-cols-4 gap-3 max-w-2xl mx-auto">
                     
-                            <div class="gold-card py-4">
-                                <h3 id="days" class="text-3xl md:text-5xl font-bold text-amber-400">0</h3>
-                                <p class="text-xs uppercase tracking-widest mt-2">Hari</p>
-                            </div>
-                    
-                            <div class="gold-card py-4">
-                                <h3 id="hours" class="text-3xl md:text-5xl font-bold text-amber-400">0</h3>
-                                <p class="text-xs uppercase tracking-widest mt-2">Jam</p>
-                            </div>
-                    
-                            <div class="gold-card py-4">
-                                <h3 id="minutes" class="text-3xl md:text-5xl font-bold text-amber-400">0</h3>
-                                <p class="text-xs uppercase tracking-widest mt-2">Menit</p>
-                            </div>
-                    
-                            <div class="gold-card py-4">
-                                <h3 id="seconds" class="text-3xl md:text-5xl font-bold text-amber-400">0</h3>
-                                <p class="text-xs uppercase tracking-widest mt-2">Detik</p>
-                            </div>
+                        <div class="gold-card py-4 flex flex-col items-center justify-center">
+    <h3 id="days" class="text-2xl md:text-5xl font-bold text-amber-400 leading-none">
+        0
+    </h3>
+
+    <p class="text-xs uppercase tracking-widest mt-2">
+        Hari
+    </p>
+</div>
+
+<div class="gold-card py-4 flex flex-col items-center justify-center">
+    <h3 id="hours" class="text-2xl md:text-5xl font-bold text-amber-400 leading-none">
+        0
+    </h3>
+
+    <p class="text-xs uppercase tracking-widest mt-2">
+        Jam
+    </p>
+</div>
+
+<div class="gold-card py-4 flex flex-col items-center justify-center">
+    <h3 id="minutes" class="text-2xl md:text-5xl font-bold text-amber-400 leading-none">
+        0
+    </h3>
+
+    <p class="text-xs uppercase tracking-widest mt-2">
+        Menit
+    </p>
+</div>
+
+<div class="gold-card py-4 flex flex-col items-center justify-center">
+    <h3 id="seconds" class="text-2xl md:text-5xl font-bold text-amber-400 leading-none">
+        0
+    </h3>
+
+    <p class="text-xs uppercase tracking-widest mt-2">
+        Detik
+    </p>
+</div>
                         </section>
                         <section class="bg-section">
                             <div class="overlay"></div>
                             <div class="content px-6 !max-w-xl">
-                                <h2 class="font-wedding text-6xl text-amber-500 mb-10" data-aos="fade-up">Waktu Pelaksanaan</h2>
+                                <h2 class="font-wedding text-6xl text-amber-500 mb-10" data-aos="fade-up">Tempat Pelaksanaan</h2>
                                 <div class="relative bg-white/5 backdrop-blur-md border-l-4 border-amber-500 p-8 text-center rounded-r-2xl shadow-xl" data-aos="fade-up">
                                     <h3 class="font-elegant text-3xl text-white mb-2">Akad & Resepsi</h3>
                                     <p class="text-amber-200 mb-6 italic">Jl. He Sukma Kp. Bitung Ratna Rt01/02 Ds. Bitung Sari Kec. Ciawi Kab. Bogor 16720
                                     </p>
-                                    <p id="hero-date" class="font-elegant text-xl tracking-[0.4em] italic reveal-text">
-                                        Sabtu, 30 Mei 2026
-                                    </p>                
+                                    
                     <div class="mt-6 rounded-2xl overflow-hidden border-2 border-amber-500 shadow-2xl">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.6974164621693!2d106.84445939999999!3d-6.684354400000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c91434d38b35%3A0xc2095aecc23b1eba!2sR.A%20ALIF!5e0!3m2!1sid!2sid!4v1779476946863!5m2!1sid!2sid"
@@ -1121,14 +1760,16 @@
                                 rows="3"></textarea>
         
                         </div>
-        
+                       <p class="text-amber-300/70 text-sm tracking-wide italic font-elegant">
+                         Kirim wa ke :
+                        </p>
                         <!-- BUTTON WA DAVI -->
                         <button
                             type="button"
                             onclick="sendWA('davi')"
                             class="clickable-effect w-full bg-amber-600 py-3 rounded-xl font-bold text-white shadow-lg hover:bg-amber-500 transition-all cursor-pointer">
         
-                            KIRIM KE WA DAVI SETIAWAN
+                            Davi Setiawan
         
                         </button>
         
@@ -1138,7 +1779,7 @@
                             onclick="sendWA('saniah')"
                             class="clickable-effect w-full bg-pink-600 py-3 rounded-xl font-bold text-white shadow-lg hover:bg-pink-500 transition-all cursor-pointer">
         
-                            KIRIM KE WA SANIAH Julianti
+                            Saniah Julianti
         
                         </button>
         
@@ -1215,11 +1856,7 @@
                             Ds. Bitung Sari Kec. Ciawi
                             Kab. Bogor 16720
                         </p>
-        
-                        <p class="rekening-name">
-                            Saniah Julianti
-                        </p>
-        
+    
                         <button
                             onclick="copyToClipboard('Jl. He Sukma Kp. Bitung Ratna RT01/02 Ds. Bitung Sari Kec. Ciawi Kab. Bogor 16720', this)"
                             class="gift-btn clickable-effect">
@@ -1284,65 +1921,39 @@
             </div>
 
         </div>
-     <!-- CREDIT -->
-<section style="padding:35px 20px; text-align:center;">
+<!-- CREDIT -->
+<section class="credit-section">
 
-    <div style="
-        display:inline-flex;
-        align-items:center;
-        gap:12px;
-        padding:16px 34px;
-        border:1px solid rgba(197,160,89,0.3);
-        border-radius:999px;
-        background:rgba(255,255,255,0.05);
-        backdrop-filter:blur(12px);
-        color:white;
-        font-size:12px;
-        letter-spacing:4px;
-        box-shadow:0 10px 25px rgba(0,0,0,0.25);
-    ">
+    <div class="credit-premium">
 
-        <span style="opacity:.7;">
-            Design By
-        </span>
+        <!-- DESIGNER (tanpa box) -->
+        <div class="credit-left">
+            <span class="credit-label">Design By</span>
+            <span class="credit-brand">FRN</span>
+        </div>
 
-        <span style="
-            color:#c5a059;
-            font-weight:bold;
-            font-size:13px;
-        ">
-            FRN
-        </span>
+        <div class="credit-divider"></div>
 
-        <!-- GARIS -->
-        <div style="
-            width:1px;
-            height:18px;
-            background:rgba(255,255,255,0.2);
-        "></div>
-
-        <!-- INSTAGRAM -->
-        <a href="https://instagram.com/username_kamu"
+        <!-- INSTAGRAM (tetap pakai box) -->
+        <a href="https://instagram.com/frhan29_"
            target="_blank"
-           style="
-                color:white;
-                text-decoration:none;
-                display:flex;
-                align-items:center;
-                gap:8px;
-                transition:.3s;
-           "
-           onmouseover="this.style.color='#e1306c'"
-           onmouseout="this.style.color='white'">
+           class="credit-instagram">
 
-            <span style="font-size:16px;">🅾 𝐈𝐧𝐬𝐭𝐚𝐠𝐫𝐚𝐦</span>
+            <div class="ig-icon">
+                🅾
+            </div>
 
-            <span style="
-                letter-spacing:2px;
-                font-size:11px;
-            ">
-                @frhan29_
-            </span>
+            <div class="ig-text">
+
+                <span class="ig-title">
+                    Instagram
+                </span>
+
+                <span class="ig-username">
+                    @frhan29_
+                </span>
+
+            </div>
 
         </a>
 
@@ -1350,8 +1961,7 @@
 
 </section>
 
-    </div>
-</section>
+
     </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -1479,17 +2089,17 @@ window.location.href = url;
         }
 
         let sX, sY, nX, nY, desX = 0, desY = 0, tX = 0, tY = 10;
-        document.onpointerdown = function (e) {
+        odrag.onpointerdown = function (e) {
             clearInterval(odrag.timer);
             sX = e.clientX; sY = e.clientY;
-            this.onpointermove = function (e) {
+            odrag.onpointermove = function (e) {
                 nX = e.clientX; nY = e.clientY;
                 desX = nX - sX; desY = nY - sY;
                 tX += desX * 0.1; tY += desY * 0.1;
                 odrag.style.transform = `rotateX(${-tY}deg) rotateY(${tX}deg)`;
                 sX = nX; sY = nY;
             };
-            this.onpointerup = function () {
+            odrag.onpointerup = function () {
                 this.onpointermove = this.onpointerup = null;
                 odrag.timer = setInterval(function () {
                     desX *= 0.95; desY *= 0.95;
@@ -1500,20 +2110,40 @@ window.location.href = url;
             };
         };
 
-        function handleImgClick(el) {
-            const lb = document.getElementById('lightbox');
-            const lbImg = document.getElementById('sanie.jpeg');
-            const lbBtn = document.querySelector('.btn-close-zoom');
-            lbImg.src = el.src;
-            lb.style.display = 'flex';
-            gsap.to(lb, { backgroundColor: "rgba(0,0,0,0.95)", backdropFilter: "blur(10px)", duration: 0.5 });
-            gsap.fromTo(lbImg, { scale: 0, opacity: 0, rotation: -15 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.8, ease: "back.out(1.7)" });
-            gsap.fromTo(lbBtn, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, delay: 0.5 });
-        }
+    function handleImgClick(el) {
+
+    const lb = document.getElementById('lightbox');
+
+    const lbImg = document.getElementById('lightbox-img');
+
+    const lbBtn = document.querySelector('.btn-close-zoom');
+
+    lbImg.src = el.src;
+
+    lb.style.display = 'flex';
+
+    gsap.to(lb, {
+        backgroundColor: "rgba(0,0,0,0.95)",
+        backdropFilter: "blur(10px)",
+        duration: 0.5
+    });
+
+    gsap.fromTo(
+        lbImg,
+        { scale: 0, opacity: 0, rotation: -15 },
+        { scale: 1, opacity: 1, rotation: 0, duration: 0.8, ease: "back.out(1.7)" }
+    );
+
+    gsap.fromTo(
+        lbBtn,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 0.5, delay: 0.5 }
+    );
+}
 
         function closeLightbox() {
             const lb = document.getElementById('lightbox');
-            const lbImg = document.getElementById('sani.jpeg');
+            const lbImg = document.getElementById('light.jpeg');
             gsap.to(lbImg, { scale: 0.5, opacity: 0, duration: 0.5, ease: "power2.in", onComplete: () => lb.style.display = 'none' });
             gsap.to(lb, { backgroundColor: "rgba(0,0,0,0)", backdropFilter: "blur(0px)", duration: 0.5 });
         }
@@ -1600,6 +2230,19 @@ window.location.href = url;
         document.head.appendChild(style);
 
         const weddingDate = new Date("May 30, 2026 09:00:00 GMT+0700").getTime();
+function scrollUp(){
+    window.scrollBy({
+        top: -600,
+        behavior: 'smooth'
+    });
+}
+
+function scrollDown(){
+    window.scrollBy({
+        top: 600,
+        behavior: 'smooth'
+    });
+}
 
 function updateCountdown() {
 
@@ -1647,10 +2290,21 @@ function updateCountdown() {
     document.getElementById("seconds").innerHTML =
         String(seconds).padStart(2, '0');
 }
+document.addEventListener("DOMContentLoaded", () => {
+    const scrollNav = document.querySelector(".scroll-nav");
 
+    window.addEventListener("scroll", () => {
+        if (!scrollNav) return;
+
+        if (window.scrollY > 300) {
+            scrollNav.classList.add("show");
+        } else {
+            scrollNav.classList.remove("show");
+        }
+    });
+});
 updateCountdown();
 
 setInterval(updateCountdown, 1000);
     </script>
-</body>
-</html>
+
