@@ -1260,6 +1260,30 @@ html, body{
         0 20px 35px rgba(0,0,0,0.35),
         0 0 20px rgba(197,160,89,0.15);
 }
+/* FIX CREDIT MOBILE */
+@media(max-width:768px){
+
+    .credit-premium{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+    }
+
+    .credit-designer,
+    .credit-instagram{
+        width:100%;
+        max-width:260px;
+        justify-content:center;
+        text-align:center;
+    }
+
+    .ig-text{
+        align-items:center;
+    }
+
+}
 
 }
     </style>
@@ -1774,104 +1798,58 @@ html, body{
 
         </div>
 <!-- CREDIT -->
-<section style="
-    padding:35px 12px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-">
+<section class="credit-section">
 
-    <div style="
-        width:100%;
-        max-width:420px;
+    <div class="credit-premium">
 
-        display:flex;
-        flex-wrap:wrap;
+        <div class="credit-glow"></div>
 
-        justify-content:center;
-        align-items:center;
+        <!-- DESIGNER -->
+        <div class="credit-designer">
 
-        gap:10px;
+            <span class="credit-label">
+                Design By
+            </span>
 
-        padding:16px 18px;
+            <span class="credit-brand">
+                FRN
+            </span>
 
-        border:1px solid rgba(197,160,89,0.3);
-        border-radius:25px;
+            <span class="credit-role">
+                Wedding Invitation Designer
+            </span>
 
-        background:rgba(255,255,255,0.05);
-        backdrop-filter:blur(12px);
-
-        color:white;
-
-        text-align:center;
-
-        box-shadow:0 10px 25px rgba(0,0,0,0.25);
-    ">
-
-        <span style="
-            opacity:.7;
-            font-size:11px;
-            letter-spacing:2px;
-        ">
-            Design By
-        </span>
-
-        <span style="
-            color:#c5a059;
-            font-weight:bold;
-            font-size:13px;
-            letter-spacing:3px;
-        ">
-            FRN
-        </span>
+        </div>
 
         <!-- GARIS -->
-        <div style="
-            width:1px;
-            height:18px;
-            background:rgba(255,255,255,0.2);
-        "></div>
+        <div class="credit-divider"></div>
 
         <!-- INSTAGRAM -->
-        <a href="https://instagram.com/username_kamu"
+        <a href="https://instagram.com/frhan29_"
            target="_blank"
-           style="
-                color:white;
-                text-decoration:none;
+           class="credit-instagram">
 
-                display:flex;
-                align-items:center;
-                justify-content:center;
+            <div class="ig-icon">
+                📷
+            </div>
 
-                gap:6px;
+            <div class="ig-text">
 
-                flex-wrap:wrap;
+                <span class="ig-title">
+                    Instagram
+                </span>
 
-                transition:.3s;
-           "
-           onmouseover="this.style.color='#e1306c'"
-           onmouseout="this.style.color='white'">
+                <span class="ig-username">
+                    @frhan29_
+                </span>
 
-            <span style="
-                font-size:14px;
-            ">
-                🅾 Instagram
-            </span>
-
-            <span style="
-                letter-spacing:1px;
-                font-size:11px;
-            ">
-                @frhan29_
-            </span>
+            </div>
 
         </a>
 
     </div>
 
 </section>
-
 
 
     </main>
@@ -2196,4 +2174,3 @@ setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
-        
