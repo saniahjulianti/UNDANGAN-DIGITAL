@@ -11,6 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
+        :root{
+    --gold: #c5a059;
+    --gold-soft: rgba(197,160,89,0.75);
+    --gold-fade: rgba(197,160,89,0.4);
+
+    --text-main: rgba(255,255,255,0.9);
+    --text-soft: rgba(255,255,255,0.65);
+
+    --glass: rgba(255,255,255,0.06);
+    --glass-border: rgba(197,160,89,0.25);
+}
         /* ===== COVER PREMIUM ===== */
 
 #envelope{
@@ -1409,6 +1420,36 @@ html, body{
 .scroll-btn:hover{
     transform: scale(1.1);
 }
+.wa-label{
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    text-transform: lowercase;
+
+    color: rgba(243, 217, 139, 0.75);
+
+    text-align: center;
+
+    margin-bottom: 12px;
+
+    opacity: 0.85;
+}
+.wa-label::after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 1px;
+    margin: 10px auto 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #c5a059,
+        transparent
+    );
+
+    opacity: 0.6;
+}
     </style>
 </head>
 
@@ -1760,9 +1801,9 @@ html, body{
                                 rows="3"></textarea>
         
                         </div>
-                       <p class="text-amber-300/70 text-sm tracking-wide italic font-elegant">
-                         Kirim wa ke :
-                        </p>
+                      <p class="wa-label">
+                        kirim wa ke :
+                    </p>
                         <!-- BUTTON WA DAVI -->
                         <button
                             type="button"
